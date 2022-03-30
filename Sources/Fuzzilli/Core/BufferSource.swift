@@ -124,7 +124,7 @@ extension Array {
     mutating func shuffle() -> Array {
         let count = self.count
         indices.lazy.dropLast().forEach {
-            guard case let index = Int(random() %(count - $0)) + $0, index != $0 else { return }
+            guard case let index = Int(random() % (count - $0)) + $0, index != $0 else { return }
             self.swapAt($0, index)
         }
         return self
